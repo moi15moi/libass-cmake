@@ -23,11 +23,11 @@ jobs:
 
     - name: Running autogen.sh in unibreak
       working-directory: src/unibreak
-      run: NOCONFIGURE=1 ./autogen.sh
+      run: ./autogen.sh
 
     - name: Running autogen.sh in fribidi
       working-directory: src/fribidi
-      run: NOCONFIGURE=1 ./autogen.sh
+      run: ./autogen.sh
 
     - name: Running autogen.sh in ass
       working-directory: src/ass
