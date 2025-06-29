@@ -5,15 +5,16 @@ ExternalProject_Add(ep_ass
     SOURCE_SUBDIR "src/ass"
     INSTALL_DIR ${CMAKE_BINARY_DIR}
     CONFIGURE_COMMAND
-        ${CMAKE_COMMAND} -E env ${PLATFORM_CONFIGURE_ENV}
-        <SOURCE_DIR>/<SOURCE_SUBDIR>/configure
-        ${PLATFORM_BUILD_AND_HOST} ${CONFIGURE_VERBOSE_ARG}
+        ${CMAKE_COMMAND} -E env ${PLATFORM_CONFIGURE_ENV} /bin/sh -c "
+        cd <SOURCE_DIR>/<SOURCE_SUBDIR> &&
+        [ -x configure ] || ./autogen.sh &&
+        ./configure ${PLATFORM_BUILD_AND_HOST} ${CONFIGURE_VERBOSE_ARG}
         --prefix=<INSTALL_DIR>
         --enable-static
         --disable-shared
         --enable-fontconfig
         --enable-libunibreak
-        --srcdir=<SOURCE_DIR>/<SOURCE_SUBDIR>
+        --srcdir=<SOURCE_DIR>/<SOURCE_SUBDIR>"
     BUILD_COMMAND make
     INSTALL_COMMAND make install
 )

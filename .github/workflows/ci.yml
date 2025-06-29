@@ -36,10 +36,6 @@ jobs:
       working-directory: src/fontconfig
       run: NOCONFIGURE=1 ./autogen.sh
 
-    - name: Running autogen.sh in ass
-      working-directory: src/ass
-      run: ./autogen.sh
-
     - name: Running buildconf.sh in expat
       working-directory: src/expat/expat
       run: ./buildconf.sh
