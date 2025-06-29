@@ -13,8 +13,7 @@ ExternalProject_Add(ep_ass
         --enable-static
         --disable-shared
         --enable-fontconfig
-        --enable-libunibreak
-        --srcdir=<SOURCE_DIR>/<SOURCE_SUBDIR>"
+        --enable-libunibreak"
     BUILD_COMMAND make
     INSTALL_COMMAND make install
 )
