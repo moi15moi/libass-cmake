@@ -21,28 +21,10 @@ jobs:
       with:
         submodules: true
 
-    - name: Install dependencies
-      run: sudo apt install gperf gettext autopoint
-  
-    - name: Running autogen.sh in unibreak
-      working-directory: src/unibreak
-      run: NOCONFIGURE=1 ./autogen.sh
-
-    - name: Running autogen.sh in fribidi
-      working-directory: src/fribidi
-      run: NOCONFIGURE=1 ./autogen.sh
-
-    - name: Running autogen.sh in fontconfig
-      working-directory: src/fontconfig
-      run: NOCONFIGURE=1 ./autogen.sh
-
-    - name: Running autogen.sh in ass
-      working-directory: src/ass
-      run: ./autogen.sh
-
-    - name: Running buildconf.sh in expat
-      working-directory: src/expat/expat
-      run: ./buildconf.sh
+    - name: Run setup-libraries composite action
+      uses: ./.github/actions/setup-libraries
+      with:
+        libass-cmake-path: ${{ github.workspace }}
 
     - name: Create build directory
       run: mkdir build
