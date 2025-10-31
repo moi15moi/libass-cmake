@@ -43,3 +43,12 @@ jobs:
     - name: Build
       working-directory: build
       run: cmake --build .
+
+    - uses: actions/upload-artifact@v5
+      with:
+        name: build
+        path: |
+          build/etc/
+          build/include/
+          build/lib/
+          build/share/
