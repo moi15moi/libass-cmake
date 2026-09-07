@@ -3,7 +3,7 @@
 Build libass for Android.
 
 ## library version
-* [unibreak](https://github.com/adah1972/libunibreak) [v6.1](https://github.com/adah1972/libunibreak/releases/tag/libunibreak_6_1)
+* [unibreak](https://github.com/adah1972/libunibreak) [v7.0](https://github.com/adah1972/libunibreak/releases/tag/libunibreak_7_0)
 * [harfbuzz](https://github.com/harfbuzz/harfbuzz) [v14.4.0](https://github.com/harfbuzz/harfbuzz/releases/tag/14.4.0)
 * [fribidi](https://github.com/fribidi/fribidi) [v1.0.16](https://github.com/fribidi/fribidi/releases/tag/v1.0.16)
 * [freetype](https://gitlab.freedesktop.org/freetype/freetype) [v2.14.3](https://gitlab.freedesktop.org/freetype/freetype/-/tags/VER-2-14-3)
