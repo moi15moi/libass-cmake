@@ -11,7 +11,6 @@ ExternalProject_Add(ep_fribidi
         --disable-shared
         --with-pic
         --disable-docs
-        --disable-option-checking
     BUILD_COMMAND make
     INSTALL_COMMAND make install
 )
