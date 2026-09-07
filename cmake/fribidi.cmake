@@ -9,6 +9,7 @@ ExternalProject_Add(ep_fribidi
         --prefix=<INSTALL_DIR>
         --enable-static
         --disable-shared
+        --with-pic
         --disable-docs
         --disable-option-checking
     BUILD_COMMAND make

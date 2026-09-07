@@ -19,6 +19,7 @@ ExternalProject_Add(ep_ass
         --prefix=<INSTALL_DIR>
         --enable-static
         --disable-shared
+        --with-pic
         --enable-fontconfig
         --enable-libunibreak
         ${ASS_ASM_ARG}
