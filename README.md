@@ -7,7 +7,7 @@ Build libass for Android.
 * [harfbuzz](https://github.com/harfbuzz/harfbuzz) [v11.3.3](https://github.com/harfbuzz/harfbuzz/releases/tag/11.2.1)
 * [fribidi](https://github.com/fribidi/fribidi) [v1.0.16](https://github.com/fribidi/fribidi/releases/tag/v1.0.16)
 * [freetype](https://gitlab.freedesktop.org/freetype/freetype) [v2.13.3](https://gitlab.freedesktop.org/freetype/freetype/-/tags/VER-2-13-3)
-* [expat](https://github.com/libexpat/libexpat) [2.7.1](https://github.com/libexpat/libexpat/releases/tag/R_2_7_1)
+* [expat](https://github.com/libexpat/libexpat) [2.8.4](https://github.com/libexpat/libexpat/releases/tag/R_2_8_4)
 * [fontconfig](https://gitlab.freedesktop.org/fontconfig/fontconfig) [master with daa175d2](https://gitlab.freedesktop.org/fontconfig/fontconfig/-/commit/daa175d234b8a362eedd4c18c33537cc2d19cd98)
 * [ass](https://github.com/libass/libass) [v0.17.5](https://github.com/libass/libass/releases/tag/0.17.5)
 
