@@ -24,11 +24,11 @@ Build libass for Android.
 
 ### autogen
 ```
-cd ./src/unibreak && ./autogen.sh
-cd ./src/fribidi && ./autogen.sh
-cd ./src/fontconfig && ./autogen.sh
-cd ./src/expat/expat && ./buildconf.sh
-cd ./src/ass && ./autogen.sh
+cd ./src/unibreak && NOCONFIGURE=1 ./autogen.sh && cd -
+cd ./src/fribidi && NOCONFIGURE=1 ./autogen.sh && cd -
+cd ./src/fontconfig && NOCONFIGURE=1 ./autogen.sh && cd -
+cd ./src/expat/expat && ./buildconf.sh && cd -
+cd ./src/ass && ./autogen.sh && cd -
 ```
 
 ### add ass cmake to CMakeList.txt 
