@@ -11,16 +11,6 @@ set(EXTERNAL_PROJECT_CMAKE_ARGS
 
 include(${CMAKE_TOOLCHAIN_FILE})
 
-# fribidi and unibreak can't match ANDROID_HOST_TAG!!!
-if(CMAKE_HOST_SYSTEM_NAME STREQUAL Linux)
-    set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64-linux")
-elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL Darwin)
-    set(ANDROID_HOST_TAG darwin-x86_64)
-    set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64-darwin")
-elseif(CMAKE_HOST_SYSTEM_NAME STREQUAL Windows)
-    set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64-windows")
-endif()
-
 #
 # Set some convenience variables.
 #
@@ -53,10 +43,21 @@ set(PLATFORM_COMPILE_ENV_FLAGS
 set(PLATFORM_CONFIGURE_ENV ${PLATFORM_COMPILE_ENV_CMDS}
         ${PLATFORM_COMPILE_ENV_FLAGS})
 
+# From https://developer.android.com/ndk/guides/other_build_systems#autoconf
+if(CMAKE_ANDROID_ARCH STREQUAL "arm")
+    set(HOST_TRIPLET "armv7a-linux-androideabi")
+elseif(CMAKE_ANDROID_ARCH STREQUAL "arm64")
+    set(HOST_TRIPLET "aarch64-linux-android")
+elseif(CMAKE_ANDROID_ARCH STREQUAL "x86")
+    set(HOST_TRIPLET "i686-linux-android")
+elseif(CMAKE_ANDROID_ARCH STREQUAL "x86_64")
+    set(HOST_TRIPLET "x86_64-linux-android")
+else()
+    message(FATAL_ERROR "Unsupported CMAKE_ANDROID_ARCH: ${CMAKE_ANDROID_ARCH}")
+endif()
+
 set(PLATFORM_BUILD_AND_HOST
-        "--build=${CMAKE_HOST_SYSTEM_PROCESSOR}"
-        "--host=${CMAKE_C_COMPILER_TARGET}"
-        "--target=${CMAKE_C_COMPILER_TARGET}"
+        "--host=${HOST_TRIPLET}"
 )
 
 #
